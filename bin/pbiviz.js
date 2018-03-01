@@ -52,7 +52,7 @@ program
     .option('--create-cert', 'Create new localhost certificate', createCertFile)
     .option('--install-cert', 'Install localhost certificate', openCertFile);
 
-//prepend logo to help screen
+//  prepend logo to help screen
 if (args.length === 2 || (args.length > 2 && args[2] === 'help')) {
     ConsoleWriter.logo();
 }
@@ -88,19 +88,6 @@ function removeCertFiles(certPath, keyPath, pfxPath) {
         if (!e.message.indexOf("no such file or directory")) {
             throw e;
         }
-    }
-}
-
-function removeTempCerts() {
-    try {
-        fs.unlinkSync(path.join(__dirname,  "..", "certs", "cer.cer"));
-    } catch (ex) {
-
-    }
-    try {
-        fs.unlinkSync(path.join(__dirname,  "..", "certs", "pvk.pvk"));
-    } catch (ex) {
-
     }
 }
 
@@ -174,7 +161,6 @@ function createCertFile() {
                         passphrase = Math.random().toString().substring(2);
                         config.server.passphrase = passphrase;
                         fs.writeFileSync(path.join(__dirname, confPath), JSON.stringify(config));
-                        ConsoleWriter.warn("passphrase for privatekey", passphrase);
 
                         let psFile = path.join(__dirname, '..', 'bin/generateCert.ps1');
                         createCertCommand =
@@ -194,7 +180,7 @@ function createCertFile() {
         } catch (e) {
             if (e.message.indexOf("'openssl' is not recognized as an internal or external command") > 0) {
                 ConsoleWriter.warn('Create certificate error:');
-                ConsoleWriter.warn('OpenSSL not installed or not available from command line');
+                ConsoleWriter.warn('OpenSSL is not installed or not available from command line');
                 ConsoleWriter.info('Install OpenSSL from https://www.openssl.org or https://wiki.openssl.org/index.php/Binaries');
                 ConsoleWriter.info('and try again');
 
@@ -205,7 +191,7 @@ function createCertFile() {
             ConsoleWriter.error('Create certificate error:', e);
         }
     } else {
-        ConsoleWriter.error('Unknown platform. Put custom certificate to:', certPath);
+        ConsoleWriter.error('Unknown platform. Please place a custom-generated certificate in:', certPath);
     }
 }
 
