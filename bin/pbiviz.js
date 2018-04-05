@@ -147,7 +147,7 @@ function createCertFile() {
                     // 6.1 - Windows 7
                     // 6.2 - Windows 8
                     let osVersion = +os.release().split(".");
-                    if (+osVersion[0] === 6 && osVersion[1] === 1 || osVersion[0] < 6) {
+                    if (+osVersion[0] === 6 && +osVersion[1] === 1 || +osVersion[0] < 6) {
                         removeCertFiles(certPath, keyPath, pfxPath);
                         startCmd = "openssl";
                         createCertCommand =
