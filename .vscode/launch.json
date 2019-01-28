@@ -10,6 +10,36 @@
             "name": "Launch Program",
             "cwd": "${workspaceRoot}",
             "program": "${workspaceFolder}\\spec\\jasmine-runner.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "visualname",
+            "cwd": "E:\\WORKSPACE\\PowerBI\\PowerBI-visuals-tools\\spec\\.tmp\\visualname",
+            "program": "${workspaceFolder}\\bin\\pbiviz-package.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "sankey",
+            "cwd": "E:\\WORKSPACE\\PowerBI\\powerbi-visuals-sankey",
+            "program": "${workspaceFolder}\\bin\\pbiviz-package.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "hierarchySlicer",
+            "cwd": "E:\\WORKSPACE\\liprec\\powerbi-hierarchySlicer",
+            "program": "${workspaceFolder}\\bin\\pbiviz-package.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "timeline",
+            "cwd": "E:\\WORKSPACE\\PowerBI\\powerbi-visuals-timeline",
+            "program": "${workspaceFolder}\\bin\\pbiviz-start.js",
+            "args": [
+            ]
         }
     ]
 }

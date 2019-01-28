@@ -31,6 +31,7 @@
     "@babel/preset-env": "7.1.6",
     "@babel/runtime": "^7.1.5",
     "@babel/runtime-corejs2": "^7.1.5",
+    "acorn": "^6.0.0",
     "async": "2.6.1",
     "babel-loader": "^8.0.4",
     "chalk": "2.4.1",
@@ -41,6 +42,8 @@
     "extra-watch-webpack-plugin": "^1.0.3",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "7.0.0",
+    "globalize": "^1.4.0",
+    "globalize-webpack-plugin": "^3.0.0",
     "json-loader": "0.5.7",
     "jsonschema": "1.2.4",
     "jszip": "3.1.5",
@@ -63,6 +66,9 @@
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-dev-server": "^3.1.14",
     "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "peerDependencies": {
+    "cldr-data": ">=25"
   },
   "devDependencies": {
     "eslint": "5.10.0",

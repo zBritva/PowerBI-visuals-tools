@@ -24,6 +24,7 @@
         "privateKey": "certs/PowerBICustomVisualTest_private.key",
         "certificate": "certs/PowerBICustomVisualTest_public.crt",
         "pfx": "certs/PowerBICustomVisualTest_public.pfx",
-        "port": "8080"
+        "port": "8080",
+        "passphrase": "09881411422849906"
     }
 }

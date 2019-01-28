@@ -102,6 +102,19 @@ VisualPackage.loadVisualPackage(cwd).then((visualPackage) => {
             server.listen(webpackConfig.devServer.port, () => {
                 ConsoleWriter.info(`Server listening on port ${webpackConfig.devServer.port}`);
             });
+            compiler.hooks.watchRun.tapAsync('plugin name', (_compiler, done) => {
+                const getChangedFiles = (compiler) => {
+                    const { watchFileSystem } = compiler;
+                    const watcher = watchFileSystem.watcher || watchFileSystem.wfs.watcher;
+                  
+                    return Object.keys(watcher.mtimes);
+                };
+                const changedFile = getChangedFiles(_compiler)
+              
+                console.log(changedFile);
+              
+                return done();
+              });
         })
         .catch(e => {
             ConsoleWriter.error(e.message);
